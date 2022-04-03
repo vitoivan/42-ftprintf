@@ -1,0 +1,4 @@
+services/libft/
+*.out
+*.a
+*.o
