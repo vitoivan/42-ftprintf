@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 12:12:53 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/04/29 10:47:03 by vivan-de         ###   ########.fr       */
+/*   Created: 2022/04/05 12:13:28 by vivan-de          #+#    #+#             */
+/*   Updated: 2022/04/29 10:46:19 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_print_str(char *str, int ***char_count)
 {
-	va_list	args;
-	int		i;
-	int		char_count;
+	char	*tmp;
 
-	va_start(args, str);
-	i = 0;
-	char_count = 0;
-	while (str[i])
+	tmp = str;
+	if (!tmp)
 	{
-		if (str[i] == '%' && str[++i])
-			ft_print_arg((char *) str, args, &char_count, &i);
-		else
+		ft_print_str("(null)", char_count);
+	}
+	else
+	{
+		while (*tmp)
 		{
-			ft_putchar_fd(str[i], 1);
-			char_count++;
-			i++;
+			ft_putchar_fd(*tmp, 1);
+			tmp++;
+			***char_count += 1;
 		}
 	}
-	va_end(args);
-	return (char_count);
 }

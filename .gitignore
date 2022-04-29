@@ -1,3 +1,7 @@
 *.out
 *.a
 *.o
+*.org
+*.txt
+objects/*.o
+main.c

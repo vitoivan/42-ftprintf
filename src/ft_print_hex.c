@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 12:12:53 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/04/29 10:47:03 by vivan-de         ###   ########.fr       */
+/*   Created: 2022/04/05 14:39:42 by vivan-de          #+#    #+#             */
+/*   Updated: 2022/04/29 10:47:52 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_print_hex(long int nbr, char c, int ***char_count, int with_prefix)
 {
-	va_list	args;
-	int		i;
-	int		char_count;
+	char	*nbr_str;
 
-	va_start(args, str);
-	i = 0;
-	char_count = 0;
-	while (str[i])
+	if (with_prefix != 0)
 	{
-		if (str[i] == '%' && str[++i])
-			ft_print_arg((char *) str, args, &char_count, &i);
+		if (c == 'x')
+			ft_print_str("0x", char_count);
 		else
-		{
-			ft_putchar_fd(str[i], 1);
-			char_count++;
-			i++;
-		}
+			ft_print_str("0X", char_count);
+		nbr_str = ft_itohex(nbr, c);
+		ft_print_str(nbr_str, char_count);
+		free(nbr_str);
 	}
-	va_end(args);
-	return (char_count);
+	else
+	{
+		nbr_str = ft_itohex(nbr, c);
+		ft_print_str(nbr_str, char_count);
+		free(nbr_str);
+	}
+	if (!nbr)
+		ft_print_char('0', char_count);
 }
