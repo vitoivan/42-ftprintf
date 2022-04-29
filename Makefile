@@ -23,7 +23,7 @@ AR = ar -crs
 
 LIBFT = ./libft/libft.a
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
 re: $(NAME)
 
@@ -40,14 +40,13 @@ fclean: clean
 dclean:
 	make fclean -C ./libft	
 
-test: $(NAME)
-	$(CC) $(CFLAGS) main.c $(NAME) -o test.out && ./test.out
-
 $(LIBFT):
 	make -C ./libft 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
-.PHONY: all re clean fclean dclean test
+.PHONY: all re clean fclean dclean 
