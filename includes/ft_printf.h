@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:16:56 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/05/01 14:39:38 by vivan-de         ###   ########.fr       */
+/*   Updated: 2022/05/01 20:52:18 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,7 @@
 
 // va_start va_arg va_copy va_end
 # include <stdarg.h>
-# include <stdio.h>
 # include "../libft/libft.h"
-
-typedef struct s_flags {
-	int	zero;
-	int	dash;
-	int	dot;
-	int	space;
-	int	hashtag;
-	int	plus;
-}	t_flags;
 
 int		ft_printf(const char *str, ...);
 int		ft_is_conversion(char c);
