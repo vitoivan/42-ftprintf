@@ -6,37 +6,26 @@
 /*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:19:42 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/04/29 10:43:29 by vivan-de         ###   ########.fr       */
+/*   Updated: 2022/05/01 12:50:20 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	nbr_len(long int number)
+static int	nbr_len(unsigned long int number)
 {
 	int	size;
 
 	size = 0;
-	if (number > 0)
+	while (number >= 1)
 	{
-		while (number >= 1)
-		{
-			number = number / 16;
-			size++;
-		}
-	}
-	else
-	{
-		while (number <= -1)
-		{
-			number = number / 16;
-			size++;
-		}
+		number = number / 16;
+		size++;
 	}
 	return (size);
 }
 
-char	*ft_itohex(long int number, char type)
+char	*ft_itohex(unsigned long int number, char type)
 {
 	int		i;
 	int		rest;

@@ -23,11 +23,11 @@ AR = ar -crs
 
 LIBFT = ./libft/libft.a
 
-all: $(OBJ_DIR) $(NAME)
+all: $(NAME)
 
 re: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(OBJ_DIR) $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 

@@ -6,7 +6,7 @@
 /*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:13:23 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/04/29 10:44:38 by vivan-de         ###   ########.fr       */
+/*   Updated: 2022/05/01 12:52:59 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_print_conversion(unsigned int c, va_list args, int **char_count)
 	else if (c == 'u')
 		ft_print_udigit(va_arg(args, unsigned int), &char_count);
 	else if (c == 'x' || c == 'X')
-		ft_print_hex(va_arg(args, long int), c, &char_count, 0);
+		ft_print_hex(va_arg(args, unsigned long int), c, &char_count, 0);
 	else if (c == 'p')
 		ft_print_ptr(va_arg(args, void *), &char_count);
 }

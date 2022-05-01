@@ -6,7 +6,7 @@
 /*   By: vivan-de <vivan-de@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:16:56 by vivan-de          #+#    #+#             */
-/*   Updated: 2022/04/29 10:54:27 by vivan-de         ###   ########.fr       */
+/*   Updated: 2022/05/01 14:39:38 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	ft_print_conversion(unsigned int c, va_list args, int **char_count);
 void	ft_print_char(unsigned int c, int ***char_count);
 void	ft_print_str(char *str, int ***char_count);
 char	*ft_uitoa(unsigned int n);
-char	*ft_itohex(long int number, char type);
+char	*ft_itohex(unsigned long int number, char type);
 void	ft_print_udigit(unsigned int nbr, int ***char_count);
 void	ft_print_signed_digit(int nbr, int ***char_count);
 void	ft_print_digit(int nbr, int ***char_count);
-void	ft_print_hex(long int nbr, char c, int ***char_count, int with_prefix);
+void	ft_print_hex(unsigned long int n, char c, int ***char_count, int pref);
 void	ft_print_ptr(void *ptr, int ***char_count);
 
 #endif // FT_PRINTF_H
