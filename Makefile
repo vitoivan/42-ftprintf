@@ -49,4 +49,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-.PHONY: all re clean fclean dclean 
+test:
+	$(CC) $(CFLAGS) main.c $(NAME) -o test.out
+	valgrind ./test.out
+
+.PHONY: all re clean fclean dclean test

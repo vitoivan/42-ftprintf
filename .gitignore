@@ -4,4 +4,3 @@
 *.org
 *.txt
 objects/*.o
-main.c
