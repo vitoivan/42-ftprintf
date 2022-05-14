@@ -6,12 +6,12 @@
 /*   By: victor <vivan-de@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 22:14:02 by victor            #+#    #+#             */
-/*   Updated: 2021/09/13 09:19:58 by victor           ###   ########.fr       */
+/*   Updated: 2022/05/14 12:40:55 by vivan-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_iswhite(int	c)
+static int	ft_iswhite(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')
