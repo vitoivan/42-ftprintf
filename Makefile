@@ -49,7 +49,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-test:
+test: $(NAME)
 	$(CC) $(CFLAGS) main.c $(NAME) -o test.out
 	valgrind ./test.out
 
